@@ -1,0 +1,172 @@
+[
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$260000$htv3uvVYfmZSW8RlsL5JJN$wYlSc4CWI0kYG9gYRs8s4Lfo3Chsim0VPCf1d7qz6vw=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "root",
+            "first_name": "",
+            "last_name": "",
+            "email": "root@byro.local",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-10-26T09:01:42.329Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "common.configuration",
+        "pk": 1,
+        "fields": {
+            "name": null,
+            "address": null,
+            "url": null,
+            "liability_interval": 36,
+            "accounting_start": null,
+            "language": null,
+            "currency": null,
+            "currency_symbol": "€",
+            "currency_postfix": true,
+            "display_cents": true,
+            "registration_form": null,
+            "default_order_name": "last",
+            "default_direct_address_name": "first",
+            "public_base_url": null,
+            "mail_from": null,
+            "backoffice_mail": null,
+            "welcome_member_template": 1,
+            "welcome_office_template": 2,
+            "leave_member_template": 3,
+            "leave_office_template": 4,
+            "record_disclosure_template": 5
+        }
+    },
+    {
+        "model": "bookkeeping.accounttag",
+        "pk": 1,
+        "fields": {
+            "name": "bank",
+            "description": null
+        }
+    },
+    {
+        "model": "bookkeeping.accounttag",
+        "pk": 2,
+        "fields": {
+            "name": "fees_receivable",
+            "description": null
+        }
+    },
+    {
+        "model": "bookkeeping.accounttag",
+        "pk": 3,
+        "fields": {
+            "name": "fees",
+            "description": null
+        }
+    },
+    {
+        "model": "bookkeeping.accounttag",
+        "pk": 4,
+        "fields": {
+            "name": "donations",
+            "description": null
+        }
+    },
+    {
+        "model": "bookkeeping.account",
+        "pk": 3,
+        "fields": {
+            "account_category": "asset",
+            "name": "Bank",
+            "tags": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "bookkeeping.account",
+        "pk": 4,
+        "fields": {
+            "account_category": "asset",
+            "name": "Member fees receivable",
+            "tags": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "bookkeeping.account",
+        "pk": 5,
+        "fields": {
+            "account_category": "income",
+            "name": "Member fees",
+            "tags": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "bookkeeping.account",
+        "pk": 6,
+        "fields": {
+            "account_category": "income",
+            "name": "Donations",
+            "tags": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "mails.mailtemplate",
+        "pk": 1,
+        "fields": {
+            "subject": "{\"de\": \"Welcome, latest member!\", \"en\": \"Welcome, latest member!\"}",
+            "text": "{\"de\": \"Hi,\\n\\nwelcome to {name}! You're now officially our latest member. Your member ID\\nis {number}. If you have any questions relating to your member fees or\\nyou want to update your member data, please contact us at {contact}.\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\", \"en\": \"Hi,\\n\\nwelcome to {name}! You're now officially our latest member. Your member ID\\nis {number}. If you have any questions relating to your member fees or\\nyou want to update your member data, please contact us at {contact}.\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\"}",
+            "reply_to": null,
+            "bcc": null
+        }
+    },
+    {
+        "model": "mails.mailtemplate",
+        "pk": 2,
+        "fields": {
+            "subject": "{\"de\": \"[byro] New member\", \"en\": \"[byro] New member\"}",
+            "text": "{\"de\": \"Hi,\\n\\nwe have a new member: {member_name}\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\", \"en\": \"Hi,\\n\\nwe have a new member: {member_name}\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\"}",
+            "reply_to": null,
+            "bcc": null
+        }
+    },
+    {
+        "model": "mails.mailtemplate",
+        "pk": 3,
+        "fields": {
+            "subject": "{\"de\": \"Goodbye!\", \"en\": \"Goodbye!\"}",
+            "text": "{\"de\": \"Hi,\\n\\nwe are sorry that you will leave us at {end}.\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\", \"en\": \"Hi,\\n\\nwe are sorry that you will leave us at {end}.\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\"}",
+            "reply_to": null,
+            "bcc": null
+        }
+    },
+    {
+        "model": "mails.mailtemplate",
+        "pk": 4,
+        "fields": {
+            "subject": "{\"de\": \"[byro] Membership termination\", \"en\": \"[byro] Membership termination\"}",
+            "text": "{\"de\": \"Hi,\\n\\n{member_name} will leave us at {end}.\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\", \"en\": \"Hi,\\n\\n{member_name} will leave us at {end}.\\n\\n{additional_information}\\n\\nThanks,\\nthe robo clerk\"}",
+            "reply_to": null,
+            "bcc": null
+        }
+    },
+    {
+        "model": "mails.mailtemplate",
+        "pk": 5,
+        "fields": {
+            "subject": "{\"de\": \"Your {association_name} data record (#{number})\", \"en\": \"Your {association_name} data record (#{number})\"}",
+            "text": "{\"de\": \"Hi,\\n\\nWe're writing you to let you know about the data we have currently stored about\\nyourself and your membership.\\n\\nYour current balance is {balance}.\\n\\n{data}\\n\\nIf these records are outdated or incorrect, please let us know as a response to\\nthis email.\\n\\nThanks,\\nthe robo clerk\", \"en\": \"Hi,\\n\\nWe're writing you to let you know about the data we have currently stored about\\nyourself and your membership.\\n\\nYour current balance is {balance}.\\n\\n{data}\\n\\nIf these records are outdated or incorrect, please let us know as a response to\\nthis email.\\n\\nThanks,\\nthe robo clerk\"}",
+            "reply_to": null,
+            "bcc": null
+        }
+    }
+]

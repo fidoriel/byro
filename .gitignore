@@ -108,6 +108,9 @@ ENV/
 # visual studio code
 .vscode
 
+# mac stuff
+.DS_Store
+
 # Rope project settings
 .ropeproject
 
